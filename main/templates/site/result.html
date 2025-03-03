@@ -1,0 +1,22 @@
+{% extends 'template.html' %}
+
+{% block content %}
+    <h2>Original Image:</h2>
+
+    <div class="callout callout-success">
+        <img src="{{ image_url }}" alt="Uploaded Image" style="width: 300px;">
+    </div>
+
+    <h3>Prediction Result:</h3>
+    <div class="callout callout-success">
+                  <h5>{{ json_data.prediction }}</h5>
+                  <p>{{ json_data.confidence }}%</p>
+    </div>
+
+    <h4>Other Probabilities:</h4>
+        <div class="callout callout-success">
+                  <h5>{{ json_data.prediction }}</h5>
+                  <pre style="white-space: pre-wrap; word-wrap: break-word;">{{ json_data.probabilities }}%</pre>
+    </div>
+
+{% endblock %}
